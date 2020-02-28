@@ -1,0 +1,37 @@
+.login-page {
+	position: relative;
+	min-height: 65rem;
+	margin: 3rem 5vh;
+
+	.sign-up-with {
+		margin: 3rem 0;
+		width: 100%;
+		border-top: 1px solid #ccc;
+		padding: 2rem 0;
+		display: grid;
+		justify-items: center;
+
+		p {
+			font-size: 1.3rem;
+		}
+
+		.sign-with-button {
+			margin: 2rem 0;
+			padding: 1rem 3rem;
+			border-radius: 5px;
+			background-color: #ececec;
+			display: flex;
+			align-items: center;
+
+			img {
+				width: 2rem;
+			}
+
+			span {
+				color: #000;
+				font-size: 1.3rem;
+				margin-left: 1rem;
+			}
+		}
+	}
+}

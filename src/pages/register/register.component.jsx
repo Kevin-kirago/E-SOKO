@@ -1,14 +1,14 @@
 import React from "react";
-import "./login.styles.scss";
+import "./register.styles.scss";
 
 import FormInput from "../../components/form_input/formInput.component";
 import CustomButton from "../../components/custom_button/custom_button.component";
-import logo from "../../assets/google.svg";
 
-class LoginPage extends React.Component {
+class RegisterPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			name: "",
 			email: "",
 			password: ""
 		};
@@ -21,25 +21,27 @@ class LoginPage extends React.Component {
 	};
 
 	render() {
-		const { email, password } = this.state;
+		const { email, name, password } = this.state;
 
 		return (
-			<div className="login-page">
+			<div className="register-page">
 				<div className="container">
 					<div className="bg-side"></div>
 					<div className="content">
 						<form className="form">
-							<h3 className="heading__tertiary">Log InTo Your Account</h3>
+							<h3 className="heading__tertiary">Create an Account with</h3>
+							<FormInput type="text" name="name" value={name} handleChange={this.handleChange} label="Full Name" required />
 							<FormInput type="email" name="email" value={email} handleChange={this.handleChange} label="Email Address" required />
 							<FormInput type="password" name="password" value={password} handleChange={this.handleChange} label="Password" required />
-							<CustomButton type="submit">Login</CustomButton>
-							<div className="sign-up-with">
-								<p>or sign up with</p>
-								<div className="sign-with-button">
-									<img src={logo} alt="sign-with-google-logo" />
-									<span>Google</span>
-								</div>
-							</div>
+							<FormInput
+								type="password"
+								name="confirm_password"
+								value={password}
+								handleChange={this.handleChange}
+								label="Confirm Password"
+								required
+							/>
+							<CustomButton type="submit">Register</CustomButton>
 						</form>
 					</div>
 				</div>
@@ -48,4 +50,4 @@ class LoginPage extends React.Component {
 	}
 }
 
-export default LoginPage;
+export default RegisterPage;
