@@ -5,6 +5,9 @@ import FormInput from "../../components/form_input/formInput.component";
 import CustomButton from "../../components/custom_button/custom_button.component";
 import logo from "../../assets/google.svg";
 
+// firebase
+import { signInWithGoogle } from "../../firebase/firebase.utils";
+
 class LoginPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -35,7 +38,7 @@ class LoginPage extends React.Component {
 							<CustomButton type="submit">Login</CustomButton>
 							<div className="sign-up-with">
 								<p>or sign up with</p>
-								<div className="sign-with-button">
+								<div className="sign-with-button" onClick={signInWithGoogle}>
 									<img src={logo} alt="sign-with-google-logo" />
 									<span>Google</span>
 								</div>
