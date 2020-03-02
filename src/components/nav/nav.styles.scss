@@ -61,9 +61,13 @@
 				color: #000;
 			}
 		}
-
-		.log-out {
-			cursor: pointer;
-		}
 	}
+}
+
+.log-out {
+	cursor: pointer;
+}
+
+.active {
+	border-bottom: 2px solid #f44a40 !important;
 }

@@ -2,10 +2,8 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-
 import { selectCurrentUser } from "../redux/user/user.selectors";
 import { setCurrentUser } from "../redux/user/user.actions";
-
 import "./App.scss";
 
 // components
@@ -21,7 +19,7 @@ import LoginPage from "../pages/login/login.component";
 import RegisterPage from "../pages/register/register.component";
 
 // firebase
-import { auth } from "../firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "../firebase/firebase.utils";
 
 class App extends React.Component {
 	unsubscribeFromAuth = null;
@@ -30,6 +28,17 @@ class App extends React.Component {
 		const { setCurrentUser } = this.props;
 
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+			if (user) {
+				const userRef = await createUserProfileDocument(user);
+				userRef.onSnapshot(snapShot => {
+					// set current user
+					setCurrentUser({
+						id: snapShot.id,
+						...snapShot.data()
+					});
+				});
+			}
+
 			setCurrentUser(user);
 		});
 	}
