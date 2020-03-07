@@ -1,26 +1,39 @@
 .home {
 	position: relative;
 	width: 100%;
-	padding: 0 5vh;
+	padding: 2.5rem 5vh;
 }
 
 .header {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	height: 60rem;
-	margin: 3rem 0;
 
-	.video-container {
+	background-color: #ececec;
+
+	&__img {
 		position: relative;
-		grid-column: 1 / 2;
-		height: 100%;
 		width: 100%;
+		height: 100%;
 
-		.video-bg {
+		img {
 			display: block;
 			width: 100%;
-			height: 100%;
+			height: inherit;
 			object-fit: cover;
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.content {
+			display: grid;
+			justify-items: start;
+			grid-row-gap: 1rem;
+			width: 70%;
 		}
 	}
 }

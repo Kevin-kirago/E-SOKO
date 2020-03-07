@@ -30,10 +30,43 @@
 }
 
 .heading {
+	&__primary {
+		font-size: 4.5rem;
+		font-weight: 700;
+		margin: 1rem 0;
+	}
+
 	&__tertiary {
 		font-size: 2rem;
 		font-weight: 500;
 		text-transform: uppercase;
 		margin: 2rem 0;
+	}
+}
+
+.paragraph {
+	font-size: 1.3rem;
+	color: #3d3d3d;
+}
+
+.btn {
+	&:link,
+	&:visited {
+		display: inline-block;
+		font-size: 1.3rem;
+		font-weight: 500;
+		border: 1px solid #000;
+		padding: 1rem 3rem;
+		margin: 1rem 0;
+		background-color: #ececec;
+		text-decoration: none;
+		color: #000;
+		transition: all 0.3s ease;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: #000;
+		color: #fff;
 	}
 }

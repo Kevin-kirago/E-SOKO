@@ -1,16 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./home.styles.scss";
 
 const HomePage = () => {
+	const bgstyles = {
+		backgroundImage: `url("https://images.pexels.com/photos/1485781/pexels-photo-1485781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")`,
+		backgroundSize: "cover",
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center"
+	};
+
 	return (
 		<div className="home">
 			<div className="header">
-				<div className="video-container">
-					<video className="video-bg" autoPlay loop>
-						<source src="https://storage.coverr.co/videos/coverr-fashion-shopping--1563961262936?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTgzMjI4ODY2fQ.Qoq3IjeDqWb0eXu-98ZDnEtL_kFj-0mZpwCJ6GvR40U" />
-					</video>
+				<div className="header__img" style={bgstyles}></div>
+				<div className="header__content">
+					<div className="content">
+						<h1 className="heading__primary">
+							Catch your Own <br /> Stylish Look
+						</h1>
+						<p className="paragraph">
+							E-SOKO evolves arounds customer needs, always watching out for new technologies, social movements and the latest artistic
+							and musical trends. All in which can be used to reflect our designs and store.
+						</p>
+						<Link to="/products" className="btn">
+							Shop now
+						</Link>
+					</div>
 				</div>
-				<div className="content"></div>
 			</div>
 		</div>
 	);
