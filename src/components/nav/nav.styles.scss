@@ -29,11 +29,8 @@
 
 	&__item {
 		margin-left: 1.5rem;
-		padding: 0.5rem 0;
 		font-size: 1.6rem;
 		font-weight: 400;
-		border-bottom: 2px solid rgba(0, 0, 0, 0);
-		transition: all 0.3s ease-in;
 
 		&:nth-child(6) {
 			&::before {
@@ -44,21 +41,20 @@
 				background-color: #000;
 				color: #000;
 			}
-
-			&:hover {
-				border-bottom: 2px solid rgba(0, 0, 0, 0);
-			}
-		}
-
-		&:hover {
-			border-bottom: 2px solid #f44a40;
 		}
 
 		&--link {
 			&:link,
 			&:visited {
 				text-decoration: none;
+				padding: 0.5rem 0;
 				color: #000;
+				transition: all 0.3s ease-in;
+				border-bottom: 2px solid rgba(0, 0, 0, 0);
+			}
+
+			&:hover {
+				border-bottom: 2px solid #f44a40;
 			}
 		}
 	}

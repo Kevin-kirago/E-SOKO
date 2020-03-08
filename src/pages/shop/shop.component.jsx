@@ -1,5 +1,5 @@
 import React from "react";
-import "./products.styles.scss";
+import "./shop.styles.scss";
 
 const ProductsPage = () => {
 	return (

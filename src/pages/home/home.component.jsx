@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Directory from "../../components/directory/directory.component";
 
 import "./home.styles.scss";
 
@@ -30,6 +31,11 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
+
+			<section className="main">
+				<h1 className="heading__primary">Collections</h1>
+				<Directory />
+			</section>
 		</div>
 	);
 };

@@ -4,7 +4,7 @@ import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./nav.styles.scss";
 
@@ -16,24 +16,24 @@ const Navigation = ({ currentUser }) => {
 			</Link>
 			<ul className="navigation__list">
 				<li className="navigation__item">
-					<Link className="navigation__item--link" to="/">
+					<NavLink className="navigation__item--link" exact to="/" activeClassName="active">
 						Home
-					</Link>
+					</NavLink>
 				</li>
 				<li className="navigation__item">
-					<Link className="navigation__item--link" to="/products">
+					<NavLink className="navigation__item--link" to="/products" activeClassName="active">
 						Products
-					</Link>
+					</NavLink>
 				</li>
 				<li className="navigation__item">
-					<Link className="navigation__item--link" to="/about">
+					<NavLink className="navigation__item--link" to="/about" activeClassName="active">
 						Checkout
-					</Link>
+					</NavLink>
 				</li>
 				<li className="navigation__item">
-					<Link className="navigation__item--link" to="/contact">
+					<NavLink className="navigation__item--link" to="/contact">
 						Contact
-					</Link>
+					</NavLink>
 				</li>
 				<li className="navigation__item">
 					<Link to="/cart" className="navigation__item--link">
@@ -50,14 +50,14 @@ const Navigation = ({ currentUser }) => {
 				) : (
 					[
 						<li key="0" className="navigation__item">
-							<Link to="/register" className="navigation__item--link">
+							<NavLink to="/register" className="navigation__item--link" activeClassName="active">
 								Register
-							</Link>
+							</NavLink>
 						</li>,
 						<li key="1" className="navigation__item">
-							<Link to="/login" className="navigation__item--link">
+							<NavLink to="/login" className="navigation__item--link" activeClassName="active">
 								Login
-							</Link>
+							</NavLink>
 						</li>
 					].map(item => item)
 				)}
